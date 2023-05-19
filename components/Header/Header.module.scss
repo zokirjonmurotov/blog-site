@@ -1,0 +1,29 @@
+@import "../../styles/variable.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $mainColor;
+  background-color: rgb(255, 255, 255, 0.8);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  color: $mainColor;
+}
+
+.write {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: $mainColor;
+}
+.logo {
+  color: $mainColor;
+}
