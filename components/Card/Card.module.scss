@@ -1,0 +1,35 @@
+@import "../../styles/variable.scss";
+
+.card {
+  width: 600px;
+  height: 180px;
+  margin: 20px auto;
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    p {
+      color: $mainColor;
+    }
+    .author,
+    .date {
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    column-gap: 50px;
+  }
+  &__text p {
+    -webkit-line-clamp: 3;
+    max-height: 110px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

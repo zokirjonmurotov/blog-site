@@ -1,7 +1,9 @@
 import classes from "./Card.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 type CardTypes = {
+  id: number;
   author: string;
   date: string;
   title: string;
@@ -12,26 +14,28 @@ type CardTypes = {
 export default function Card(props: CardTypes) {
   return (
     <>
-      <div className={classes.card}>
-        <div className={classes.card__header}>
-          <h2 className={classes.author}>{props.author}</h2>
-          <p className={classes.date}>{props.date}</p>
-        </div>
-        <div className={classes.card__main}>
-          <div className={classes.card__text}>
-            <h1>{props.title}</h1>
-            <p>{props.text}</p>
+      <Link href={`/blogs/${props.title}-${props.id}`}>
+        <div className={classes.card}>
+          <div className={classes.card__header}>
+            <h4 className={classes.author}>{props.author}</h4>
+            <p className={classes.date}>{props.date}</p>
           </div>
-          <div className={classes.card__poster}>
-            <Image
-              src={props.image}
-              width={200}
-              height={200}
-              alt="poster img"
-            />
+          <div className={classes.card__main}>
+            <div className={classes.card__text}>
+              <h3>{props.title}</h3>
+              <p>{props.text}</p>
+            </div>
+            <div className={classes.card__poster}>
+              <Image
+                src={props.image}
+                width={100}
+                height={100}
+                alt="poster img"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 }

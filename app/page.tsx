@@ -1,9 +1,9 @@
-import Image from 'next/image'
-
 export default function Home() {
-  return(
+  console.log("gihi");
+
+  return (
     <>
-    <h1>Hello Next.js</h1>
+      <h1>Hello Next.js</h1>
     </>
-  )
+  );
 }
