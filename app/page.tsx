@@ -1,9 +1,9 @@
-export default function Home() {
-  console.log("gihi");
+import Head from "next/head";
 
+export default function Home() {
   return (
     <>
-      <h1>Hello Next.js</h1>
+      <h1>Hello Next.js hi</h1>
     </>
   );
 }
