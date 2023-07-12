@@ -2,6 +2,8 @@ import classes from "./Card.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
+// --------------------------------
+
 type CardTypes = {
   id: number;
   author: string;
@@ -10,6 +12,8 @@ type CardTypes = {
   text: string;
   image: string;
 };
+
+// --------------------------------
 
 export default function Card(props: CardTypes) {
   return (

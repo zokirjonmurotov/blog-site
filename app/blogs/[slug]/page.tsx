@@ -7,9 +7,6 @@ interface Props {
   params: { slug: string };
 }
 
-// export const metadata: Metadata = {
-//   title: "nimadir",
-// }
 
 export default async function Blog({ params }: Props) {
   const paramId = params.slug.split("-");
