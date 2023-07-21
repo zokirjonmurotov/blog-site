@@ -13,7 +13,7 @@ export const obj = [
     date: "20-12-2022",
     title: "Set data sturucture",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil accusantium laboriosam magni architecto.",
-    image: "https://murotov.netlify.app/assets/images/zokirjpg.jpg",
+    image: "https://static.tildacdn.com/tild3263-3831-4535-a636-346664376264/photo_2023-06-06_132.jpeg",
   },
   {
     id: 3,
