@@ -1,12 +1,14 @@
 "use client";
 import Card from "@/components/Card/Card";
 import { useEffect, useState } from "react";
-import { getAllData } from "@/blogs-data";
 import { Metadata } from "next";
+import getAlbum from "@/utils/data";
 
 export type dataProps = {
-  id: number;
+  id: string;
   title: string;
+  author: string;
+  date: string;
   body: string;
 };
 
@@ -15,14 +17,17 @@ export const metadata: Metadata = {
   description: "this is just description",
 };
 export default function Blogs() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
+    getAlbum()
       .then((res) => {
-        setData(res);
+        console.log("hii");
         console.log(res);
+        setData(res);
+      })
+      .catch((err) => {
+        console.log(`bunaqa error: ${err}`);
       });
   }, []);
 
@@ -39,11 +44,8 @@ export default function Blogs() {
         <Card
           key={content.id}
           id={content.id}
-          // author={content.author}
-          // date={content.date}
           title={content.title}
           body={content.body}
-          // image={content.image}
         />
       ))}
     </div>

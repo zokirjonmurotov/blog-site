@@ -5,7 +5,7 @@ import Link from "next/link";
 // --------------------------------
 
 type CardTypes = {
-  id?: number;
+  id?: number | string;
   // author: string;
   // date: string;
   title?: string;

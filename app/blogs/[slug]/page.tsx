@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getDataById } from "@/blogs-data";
 import { Metadata } from "next";
 import Head from "next/head";
 import Card from "@/components/Card/Card";
@@ -24,16 +23,9 @@ export default function Blog({ params }: Props) {
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-
-        setPostData(res);
-      });
+      .then((res) => setPostData(res));
   }, []);
 
-  useEffect(() => {
-    console.log(postdata);
-  }, [postdata]);
 
   if (!postdata) {
     return <h1>Loading...</h1>;
@@ -46,11 +38,10 @@ export default function Blog({ params }: Props) {
   );
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export  function generateMetadata({ params }: Props) {
   const paramId = params.slug.split("-");
 
-  const data = getDataById(+paramId[paramId.length - 1]);
   return {
-    title: data?.title,
+    title: 'dynamic page',
   };
 }
